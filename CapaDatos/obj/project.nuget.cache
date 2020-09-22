@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ewgud3hCg9E1HIM7WZm3nHY6QjP0ehJDQiQwPXX+zFJiGtldadgF/enpJVgysN0VNG6P/b3YD2yH791MBD5ciQ==",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio Programs\\Caetano\\caetano\\CapaDatos\\CapaDatos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Chehin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Chehin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

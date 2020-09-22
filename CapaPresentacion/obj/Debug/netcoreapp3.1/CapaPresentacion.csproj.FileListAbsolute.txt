@@ -1,0 +1,16 @@
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\bin\Debug\netcoreapp3.1\CapaPresentacion.exe
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\bin\Debug\netcoreapp3.1\CapaPresentacion.deps.json
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\bin\Debug\netcoreapp3.1\CapaPresentacion.runtimeconfig.json
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\bin\Debug\netcoreapp3.1\CapaPresentacion.runtimeconfig.dev.json
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\bin\Debug\netcoreapp3.1\CapaPresentacion.dll
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\bin\Debug\netcoreapp3.1\CapaPresentacion.pdb
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.csprojAssemblyReference.cache
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.frmPrincipal.resources
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.Properties.Resources.resources
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.csproj.GenerateResource.cache
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.AssemblyInfoInputs.cache
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.AssemblyInfo.cs
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.csproj.CoreCompileInputs.cache
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.dll
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.pdb
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\netcoreapp3.1\CapaPresentacion.genruntimeconfig.cache

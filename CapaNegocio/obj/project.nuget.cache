@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BcT7tcy5nhJPR71X1hwenM1wlrTx+6gwE0/j5uFvQ4D4MhQojwjKPAPgwpE8bNC4Zp5wOoYFgg5ygQWUOCh6Bw==",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio Programs\\Caetano\\caetano\\CapaNegocio\\CapaNegocio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Chehin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Chehin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
