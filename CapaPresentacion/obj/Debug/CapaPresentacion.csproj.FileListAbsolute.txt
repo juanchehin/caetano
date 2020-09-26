@@ -77,3 +77,4 @@ D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresent
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formCortes.resources
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formAlumnos.resources
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formCursos.resources

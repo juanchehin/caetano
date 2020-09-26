@@ -38,7 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAyuda = new System.Windows.Forms.Button();
-            this.btnTrabajos = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
             this.btnCalendario = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
@@ -129,15 +129,16 @@
             this.btnAyuda.Click += new System.EventHandler(this.button1_Click_1);
             this.btnAyuda.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
-            // btnTrabajos
+            // btnCursos
             // 
-            this.btnTrabajos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTrabajos.BackgroundImage")));
-            this.btnTrabajos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnTrabajos.Location = new System.Drawing.Point(210, 311);
-            this.btnTrabajos.Name = "btnTrabajos";
-            this.btnTrabajos.Size = new System.Drawing.Size(147, 114);
-            this.btnTrabajos.TabIndex = 10;
-            this.btnTrabajos.UseVisualStyleBackColor = true;
+            this.btnCursos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCursos.BackgroundImage")));
+            this.btnCursos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCursos.Location = new System.Drawing.Point(210, 311);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(147, 114);
+            this.btnCursos.TabIndex = 10;
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
             // btnCalendario
             // 
@@ -266,7 +267,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnTrabajos);
+            this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnCalendario);
             this.Controls.Add(this.btnCompras);
             this.Controls.Add(this.btnProveedores);
@@ -291,7 +292,7 @@
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnCalendario;
-        private System.Windows.Forms.Button btnTrabajos;
+        private System.Windows.Forms.Button btnCursos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

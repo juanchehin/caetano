@@ -93,5 +93,12 @@ namespace CapaPresentacion
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            formCursos frm = new formCursos();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
