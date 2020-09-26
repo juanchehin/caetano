@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,16 +8,24 @@ namespace CapaPresentacion
 {
     static class Program
     {
+        // Bandera usada para cerrar la pantalla de presentacion
+        public static bool OpenDetailFormOnClose { get; set; }
+
         /// <summary>
-        ///  The main entry point for the application.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            // OpenDetailFormOnClose = false;
+            // Application.Run(new formSplashScreen());   // Cambiar por new formLogin()
             Application.Run(new frmPrincipal());
+
+            if (OpenDetailFormOnClose)
+            {
+            }
         }
     }
 }
