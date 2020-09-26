@@ -39,7 +39,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnAyuda = new System.Windows.Forms.Button();
             this.btnTrabajos = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnCalendario = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
@@ -47,13 +47,17 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.ttAyuda = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAlumnos = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 134);
+            this.label1.Location = new System.Drawing.Point(259, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 12;
@@ -62,16 +66,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(465, 134);
+            this.label2.Location = new System.Drawing.Point(659, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Empleados";
+            this.label2.Text = "Cortes";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(660, 134);
+            this.label3.Location = new System.Drawing.Point(468, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 14;
@@ -80,7 +84,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(259, 274);
+            this.label4.Location = new System.Drawing.Point(259, 295);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 15;
@@ -89,34 +93,35 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(466, 274);
+            this.label5.Location = new System.Drawing.Point(477, 295);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.Size = new System.Drawing.Size(28, 13);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Compras";
+            this.label5.Text = "Caja";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(659, 274);
+            this.label6.Location = new System.Drawing.Point(659, 428);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Ventas";
+            this.label6.Text = "Usuarios";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(259, 424);
+            this.label7.Location = new System.Drawing.Point(259, 428);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Trabajos";
+            this.label7.Text = "Cursos";
             // 
             // btnAyuda
             // 
-            // this.btnAyuda.Image = global::CapaPresentacion.Properties.Resources.info;
-            this.btnAyuda.Location = new System.Drawing.Point(743, 396);
+            this.btnAyuda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAyuda.BackgroundImage")));
+            this.btnAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAyuda.Location = new System.Drawing.Point(790, 396);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(45, 42);
             this.btnAyuda.TabIndex = 19;
@@ -126,70 +131,71 @@
             // 
             // btnTrabajos
             // 
-            // this.btnTrabajos.Image = global::CapaPresentacion.Properties.Resources.labour;
-            this.btnTrabajos.Location = new System.Drawing.Point(210, 302);
+            this.btnTrabajos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTrabajos.BackgroundImage")));
+            this.btnTrabajos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTrabajos.Location = new System.Drawing.Point(210, 311);
             this.btnTrabajos.Name = "btnTrabajos";
             this.btnTrabajos.Size = new System.Drawing.Size(147, 114);
             this.btnTrabajos.TabIndex = 10;
             this.btnTrabajos.UseVisualStyleBackColor = true;
-            // this.btnTrabajos.Click += new System.EventHandler(this.btnTrabajos_Click);
             // 
-            // btnVentas
+            // btnCalendario
             // 
-            // this.btnVentas.Image = global::CapaPresentacion.Properties.Resources.sale;
-            this.btnVentas.Location = new System.Drawing.Point(610, 153);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(147, 114);
-            this.btnVentas.TabIndex = 9;
-            this.btnVentas.UseVisualStyleBackColor = true;
-            // this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            this.btnCalendario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCalendario.BackgroundImage")));
+            this.btnCalendario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCalendario.Location = new System.Drawing.Point(610, 169);
+            this.btnCalendario.Name = "btnCalendario";
+            this.btnCalendario.Size = new System.Drawing.Size(147, 123);
+            this.btnCalendario.TabIndex = 9;
+            this.btnCalendario.UseVisualStyleBackColor = true;
             // 
             // btnCompras
             // 
-            // this.btnCompras.Image = global::CapaPresentacion.Properties.Resources.cart;
-            this.btnCompras.Location = new System.Drawing.Point(416, 153);
+            this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
+            this.btnCompras.Location = new System.Drawing.Point(416, 169);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(147, 114);
+            this.btnCompras.Size = new System.Drawing.Size(147, 123);
             this.btnCompras.TabIndex = 8;
             this.btnCompras.UseVisualStyleBackColor = true;
-            // this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnProveedores
             // 
-            // this.btnProveedores.Image = global::CapaPresentacion.Properties.Resources.team;
-            this.btnProveedores.Location = new System.Drawing.Point(210, 153);
+            this.btnProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProveedores.BackgroundImage")));
+            this.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnProveedores.Location = new System.Drawing.Point(210, 169);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(147, 114);
+            this.btnProveedores.Size = new System.Drawing.Size(147, 123);
             this.btnProveedores.TabIndex = 7;
             this.btnProveedores.UseVisualStyleBackColor = true;
-            // this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnProductos
             // 
-            // this.btnProductos.Image = global::CapaPresentacion.Properties.Resources.box;
+            this.btnProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductos.BackgroundImage")));
             this.btnProductos.Location = new System.Drawing.Point(610, 12);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(147, 114);
+            this.btnProductos.Size = new System.Drawing.Size(147, 135);
             this.btnProductos.TabIndex = 6;
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnEmpleados
             // 
-            // this.btnEmpleados.Image = global::CapaPresentacion.Properties.Resources.Empleado1;
+            this.btnEmpleados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.BackgroundImage")));
+            this.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEmpleados.Location = new System.Drawing.Point(416, 13);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(147, 114);
+            this.btnEmpleados.Size = new System.Drawing.Size(147, 134);
             this.btnEmpleados.TabIndex = 5;
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // btnClientes
             // 
-            // this.btnClientes.Image = global::CapaPresentacion.Properties.Resources.man4;
+            this.btnClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.BackgroundImage")));
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClientes.Location = new System.Drawing.Point(210, 13);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(147, 114);
+            this.btnClientes.Size = new System.Drawing.Size(147, 134);
             this.btnClientes.TabIndex = 4;
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.button1_Click);
@@ -203,11 +209,53 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAlumnos
+            // 
+            this.btnAlumnos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlumnos.BackgroundImage")));
+            this.btnAlumnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAlumnos.Location = new System.Drawing.Point(416, 311);
+            this.btnAlumnos.Name = "btnAlumnos";
+            this.btnAlumnos.Size = new System.Drawing.Size(147, 114);
+            this.btnAlumnos.TabIndex = 21;
+            this.btnAlumnos.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(468, 428);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Alumnos";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Location = new System.Drawing.Point(610, 311);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 114);
+            this.button1.TabIndex = 23;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(659, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Calendario";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(848, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnAlumnos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.label7);
@@ -218,7 +266,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTrabajos);
-            this.Controls.Add(this.btnVentas);
+            this.Controls.Add(this.btnCalendario);
             this.Controls.Add(this.btnCompras);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnProductos);
@@ -241,7 +289,7 @@
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnCompras;
-        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button btnCalendario;
         private System.Windows.Forms.Button btnTrabajos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -253,5 +301,9 @@
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.ToolTip ttAyuda;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAlumnos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
     }
 }

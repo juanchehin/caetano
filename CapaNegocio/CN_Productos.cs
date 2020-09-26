@@ -15,9 +15,9 @@ namespace CapaNegocio
     {
         private CD_Productos objetoCD = new CD_Productos();
 
-        //Método Insertar que llama al método Insertar de la clase DArticulo
+        //Método Insertar que llama al método Insertar de la clase DProductos
         //de la CapaDatos
-        public static string Insertar(string nombre, string Codigo, string PrecioCompra, string PrecioVenta, string Descripcion, string Stock)
+        /*public static string Insertar(string , string Codigo, string PrecioCompra, string PrecioVenta, string Descripcion, string Stock)
         {
             // Console.WriteLine("En insertar , nombre es " + nombre);
 
@@ -30,15 +30,15 @@ namespace CapaNegocio
             Obj.Stock = Stock;
 
             return Obj.Insertar(Obj);
-        }
+        }*/
 
         public DataTable MostrarProd()
         {
-
             DataTable tabla = new DataTable();
             tabla = objetoCD.Mostrar();
             return tabla;
         }
+        /*
         // Devuelve solo un producto
         public DataTable MostrarProducto(int IdProducto)
         {
@@ -81,7 +81,7 @@ namespace CapaNegocio
             CD_Productos Obj = new CD_Productos();
             Obj.TextoBuscar = textobuscar;
             return Obj.BuscarProducto(Obj);
-        }
+        }*/
 
     }
 }

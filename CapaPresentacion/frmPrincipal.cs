@@ -33,9 +33,9 @@ namespace CapaPresentacion
         
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            // formEmpleados frm = new formEmpleados();
-            // frm.MdiParent = this.MdiParent;
-            // frm.Show();
+            formProductos frm = new formProductos();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
         
         private void txtSalir_Click(object sender, EventArgs e)

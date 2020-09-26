@@ -127,7 +127,7 @@ namespace CapaPresentacion
             {
                 int selectedrowindex = dataListadoProductos.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoProductos.Rows[selectedrowindex];
-                this.IdProducto = Convert.ToInt32(selectedRow.Cells["IdPRoducto"].Value);
+                this.IdProducto = Convert.ToInt32(selectedRow.Cells["IdProducto"].Value);
                 Console.WriteLine("El id producto es " + this.IdProducto);
             }
         }
@@ -135,7 +135,7 @@ namespace CapaPresentacion
         private void BuscarProducto()
         {
             Console.WriteLine("this.txtBuscar.Text es " + this.txtBuscar.Text);
-            this.dataListadoProductos.DataSource = objetoCN.BuscarProducto(this.txtBuscar.Text);
+            // this.dataListadoProductos.DataSource = objetoCN.BuscarProducto(this.txtBuscar.Text);
             // this.OcultarColumnas();
             lblTotalProductos.Text = "Total de Registros: " + Convert.ToString(dataListadoProductos.Rows.Count);
         }

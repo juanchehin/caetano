@@ -11,12 +11,10 @@ namespace CapaDatos
     {
         private int _IdProducto;
         private string _Producto;
-        private string _Codigo;
-        private string _Descripcion;
-        private string _Stock;
-        private string _PrecioCompra;
-        private string _PrecioVenta;
+        private decimal _Precio;
+        private int _Stock;
         private string _EstadoProd;
+        private string _Observaciones;
 
         private string _TextoBuscar;
 
@@ -24,13 +22,11 @@ namespace CapaDatos
 
         public int IdProducto { get => _IdProducto; set => _IdProducto = value; }
         public string Producto { get => _Producto; set => _Producto = value; }
-        public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
-        public string Stock { get => _Stock; set => _Stock = value; }
+        public decimal Precio { get => _Precio; set => _Precio = value; }
+        public int Stock { get => _Stock; set => _Stock = value; }
         public string EstadoProd { get => _EstadoProd; set => _EstadoProd = value; }
+        public string Observaciones { get => _Observaciones; set => _Observaciones = value; }
         public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
-        public string Codigo { get => _Codigo; set => _Codigo = value; }
-        public string PrecioCompra { get => _PrecioCompra; set => _PrecioCompra = value; }
-        public string PrecioVenta { get => _PrecioVenta; set => _PrecioVenta = value; }
 
         //Constructores
         public CD_Productos()
@@ -38,16 +34,14 @@ namespace CapaDatos
 
         }
 
-        public CD_Productos(int IdProducto, string Producto,string Codigo,string Descripcion,string PrecioVenta,string PrecioCompra, string Stock, string EstadoProd, string textobuscar)
+        public CD_Productos(int IdProducto, string Producto,decimal Precio,int Stock,string Observaciones,string EstadoProd, string textobuscar)
         {
             this.IdProducto = IdProducto;
             this.Producto = Producto;
-            this.Codigo = Codigo;
-            this.PrecioVenta = PrecioVenta;
-            this.PrecioCompra = PrecioCompra;
-            this.Descripcion = Descripcion;
+            this.Precio = Precio;
             this.Stock = Stock;
             this.EstadoProd = EstadoProd;
+            this.Observaciones = Observaciones;
             this.TextoBuscar = textobuscar;
 
         }
@@ -134,26 +128,12 @@ namespace CapaDatos
                 pProducto.Value = Producto.Producto;
                 comando.Parameters.Add(pProducto);
 
-                MySqlParameter pCodigo = new MySqlParameter();
-                pCodigo.ParameterName = "@pCodigo";
-                pCodigo.MySqlDbType = MySqlDbType.VarChar;
-                pCodigo.Size = 30;
-                pCodigo.Value = Producto.Codigo;
-                comando.Parameters.Add(pCodigo);
-
-                MySqlParameter pPrecioCompra = new MySqlParameter();
-                pPrecioCompra.ParameterName = "@pPrecioCompra";
-                pPrecioCompra.MySqlDbType = MySqlDbType.VarChar;
-                pPrecioCompra.Size = 60;
-                pPrecioCompra.Value = Producto.PrecioCompra;
-                comando.Parameters.Add(pPrecioCompra);
-
-                MySqlParameter pPrecioVenta = new MySqlParameter();
-                pPrecioVenta.ParameterName = "@pPrecioVenta";
-                pPrecioVenta.MySqlDbType = MySqlDbType.VarChar;
-                pPrecioVenta.Size = 60;
-                pPrecioVenta.Value = Producto.PrecioVenta;
-                comando.Parameters.Add(pPrecioVenta);
+                MySqlParameter pPrecio = new MySqlParameter();
+                pPrecio.ParameterName = "@pPrecio";
+                pPrecio.MySqlDbType = MySqlDbType.Decimal;
+                // pPrecio.Size = 30;
+                pPrecio.Value = Producto.Precio;
+                comando.Parameters.Add(pPrecio);
 
                 MySqlParameter pStock = new MySqlParameter();
                 pStock.ParameterName = "@pStock";
@@ -162,13 +142,19 @@ namespace CapaDatos
                 pStock.Value = Producto.Stock;
                 comando.Parameters.Add(pStock);
 
-                MySqlParameter pDescripcion = new MySqlParameter();
-                pDescripcion.ParameterName = "@pDescripcion";
-                pDescripcion.MySqlDbType = MySqlDbType.VarChar;
-                pDescripcion.Size = 60;
-                pDescripcion.Value = Producto.Descripcion;
-                comando.Parameters.Add(pDescripcion);
+                MySqlParameter pEstadoProd = new MySqlParameter();
+                pEstadoProd.ParameterName = "@pEstadoProd";
+                pEstadoProd.MySqlDbType = MySqlDbType.VarChar;
+                pEstadoProd.Size = 1;
+                pEstadoProd.Value = Producto.EstadoProd;
+                comando.Parameters.Add(pEstadoProd);
 
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 255;
+                pObservaciones.Value = Producto.Observaciones;
+                comando.Parameters.Add(pObservaciones);
                 
 
                 Console.WriteLine("rpta es : " + rpta );
@@ -177,7 +163,7 @@ namespace CapaDatos
                 //Ejecutamos nuestro comando
 
                 // ExecuteNonQuery devuelve el numero de filas afectadas
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Producto";
                 comando.Parameters.Clear();
 
             }
@@ -212,7 +198,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Producto";
 
             }
             catch (Exception ex)
@@ -227,7 +213,9 @@ namespace CapaDatos
             comando.Parameters.Clear();
             return rpta;
         }
-
+        // ===================================
+        // Permite editar un producto
+        // ===================================
         public string Editar(CD_Productos Producto)
         {
             Console.WriteLine("Produco.IdProducto es 1 : " + Producto.IdProducto);
@@ -255,40 +243,33 @@ namespace CapaDatos
                 pProducto.Value = Producto.Producto;
                 comando.Parameters.Add(pProducto);
 
-                MySqlParameter pCodigo = new MySqlParameter();
-                pCodigo.ParameterName = "@pCodigo";
-                pCodigo.MySqlDbType = MySqlDbType.VarChar;
-                pCodigo.Size = 30;
-                pCodigo.Value = Producto.Codigo;
-                comando.Parameters.Add(pCodigo);
-
-                MySqlParameter pPrecioCompra = new MySqlParameter();
-                pPrecioCompra.ParameterName = "@pPrecioCompra";
-                pPrecioCompra.MySqlDbType = MySqlDbType.Decimal;
-                // pPrecioCompra.Size = 60;
-                pPrecioCompra.Value = Producto.PrecioCompra;
-                comando.Parameters.Add(pPrecioCompra);
-
-                MySqlParameter pPrecioVenta = new MySqlParameter();
-                pPrecioVenta.ParameterName = "@pPrecioVenta";
-                pPrecioVenta.MySqlDbType = MySqlDbType.Decimal;
-                // pIdEmpleado.Size = 60;
-                pPrecioVenta.Value = Producto.PrecioVenta;
-                comando.Parameters.Add(pPrecioVenta);
+                MySqlParameter pPrecio = new MySqlParameter();
+                pPrecio.ParameterName = "@pPrecio";
+                pPrecio.MySqlDbType = MySqlDbType.Decimal;
+                // pPrecio.Size = 30;
+                pPrecio.Value = Producto.Precio;
+                comando.Parameters.Add(pPrecio);
 
                 MySqlParameter pStock = new MySqlParameter();
                 pStock.ParameterName = "@pStock";
-                pStock.MySqlDbType = MySqlDbType.Int32;
-                // pIdEmpleado.Size = 60;
+                pStock.MySqlDbType = MySqlDbType.Int16;
+                pStock.Size = 40;
                 pStock.Value = Producto.Stock;
                 comando.Parameters.Add(pStock);
 
-                MySqlParameter pDescripcion = new MySqlParameter();
-                pDescripcion.ParameterName = "@pDescripcion";
-                pDescripcion.MySqlDbType = MySqlDbType.VarChar;
-                pDescripcion.Size = 60;
-                pDescripcion.Value = Producto.Descripcion;
-                comando.Parameters.Add(pDescripcion);
+                MySqlParameter pEstadoProd = new MySqlParameter();
+                pEstadoProd.ParameterName = "@pEstadoProd";
+                pEstadoProd.MySqlDbType = MySqlDbType.VarChar;
+                pEstadoProd.Size = 1;
+                pEstadoProd.Value = Producto.EstadoProd;
+                comando.Parameters.Add(pEstadoProd);
+
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 255;
+                pObservaciones.Value = Producto.Observaciones;
+                comando.Parameters.Add(pObservaciones);
 
                 // Console.WriteLine("comando.Executeexe() es : " + comando.ExecuteReader().ToString());
 
@@ -296,7 +277,7 @@ namespace CapaDatos
 
                 //Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "No se edito el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "No se edito el Producto";
 
                 
 
