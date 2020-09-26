@@ -149,6 +149,7 @@
             // btnRefrescar
             // 
             this.btnRefrescar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.BackgroundImage")));
+            this.btnRefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnRefrescar.Location = new System.Drawing.Point(703, 123);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(31, 32);

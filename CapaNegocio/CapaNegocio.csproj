@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Alumnos.cs" />
     <Compile Include="CN_Clientes.cs" />
     <Compile Include="CN_Cortes.cs" />
     <Compile Include="CN_Productos.cs" />

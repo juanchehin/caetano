@@ -86,5 +86,12 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void btnAlumnos_Click(object sender, EventArgs e)
+        {
+            formAlumnos frm = new formAlumnos();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

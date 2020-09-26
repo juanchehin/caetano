@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_Alumnos.cs" />
     <Compile Include="CD_Clientes.cs" />
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_Cortes.cs" />

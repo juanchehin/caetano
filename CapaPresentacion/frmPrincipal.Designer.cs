@@ -218,6 +218,7 @@
             this.btnAlumnos.Size = new System.Drawing.Size(147, 114);
             this.btnAlumnos.TabIndex = 21;
             this.btnAlumnos.UseVisualStyleBackColor = true;
+            this.btnAlumnos.Click += new System.EventHandler(this.btnAlumnos_Click);
             // 
             // label8
             // 
