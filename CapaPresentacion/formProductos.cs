@@ -88,7 +88,7 @@ namespace CapaPresentacion
 
                 if (Opcion == DialogResult.OK)
                 {
-                    CN_Productos.Eliminar(this.IdProducto);
+                    // CN_Productos.Eliminar(this.IdProducto);
                     this.MostrarProductos();
                     this.MensajeOk("Se elimino de forma correcta el producto");
                 }

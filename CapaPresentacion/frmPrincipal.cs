@@ -26,7 +26,7 @@ namespace CapaPresentacion
         
         private void button3_Click(object sender, EventArgs e)
         {
-            formProductos frm = new formProductos();
+            formCortes frm = new formCortes();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

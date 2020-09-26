@@ -75,3 +75,4 @@ D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresent
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.application
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formCortes.resources

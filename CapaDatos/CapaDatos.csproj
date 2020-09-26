@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="CD_Clientes.cs" />
     <Compile Include="CD_Conexion.cs" />
+    <Compile Include="CD_Cortes.cs" />
     <Compile Include="CD_Productos.cs" />
     <Compile Include="CD_Proveedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
