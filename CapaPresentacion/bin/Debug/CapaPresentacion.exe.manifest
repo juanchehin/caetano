@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QHCBo2QPCXCz7CU3lypujDF2hWYaL/7tdNLBPy8eKvw=</dsig:DigestValue>
+        <dsig:DigestValue>yp2RsOf0mUgM5qVx/9MYx2GZBeDN9wCKu5AXTVv0HgY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="6656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="7168">
       <assemblyIdentity name="CapaNegocio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F2r9M6ba6qkkISOrGYZzXjEWXJRNheVRamVR5DsHakc=</dsig:DigestValue>
+        <dsig:DigestValue>Ccp5T8XlppbKNXRk8eACJQiu4nkloqwKvoRMPgwBGos=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dt+DaWwl8xN/mPWKQsHvz7bWaj/bpm/nI0+jmbzAZZw=</dsig:DigestValue>
+        <dsig:DigestValue>BVQ89oEvrxAGqva5MoN6GTp92MBmUV2kbnH5CMUjud0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

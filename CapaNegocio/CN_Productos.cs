@@ -48,14 +48,15 @@ namespace CapaNegocio
             Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
             Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
-        }
+        }*/
         public static string Eliminar(int IdProducto)
         {
+            Console.WriteLine("IdProducto en eliminar es : " + IdProducto);
             CD_Productos Obj = new CD_Productos();
-            Obj.IdProducto = IdProducto;
-            return Obj.Eliminar(Obj);
+            // Obj.IdProducto = IdProducto;
+            return Obj.Eliminar(IdProducto);
         }
-
+        /*
 
         public static string Editar(int IdProducto, string Producto, string Codigo, string PrecioCompra, string PrecioVenta, string Descripcion, string Stock)
         {
@@ -74,14 +75,14 @@ namespace CapaNegocio
 
             return Obj.Editar(Obj);
         }
-
+        */
         public DataTable BuscarProducto(string textobuscar)
         {
             Console.WriteLine("textobuscar en capa negocio es : " + textobuscar);
             CD_Productos Obj = new CD_Productos();
             Obj.TextoBuscar = textobuscar;
             return Obj.BuscarProducto(Obj);
-        }*/
+        }
 
     }
 }

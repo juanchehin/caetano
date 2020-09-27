@@ -179,10 +179,11 @@ namespace CapaDatos
             return rpta;
 
         }
-        // Metodo ELIMINAR Empleado (da de baja)
-        public string Eliminar(CD_Productos Producto)
+        // Metodo ELIMINAR producto
+        public string Eliminar(int IdProducto)
         {
             string rpta = "";
+            Console.WriteLine("IdProducto en CD productos es _: " + IdProducto);
             try
             {
                 comando.Connection = conexion.AbrirConexion();
@@ -193,12 +194,13 @@ namespace CapaDatos
                 pIdProducto.ParameterName = "@pIdProducto";
                 pIdProducto.MySqlDbType = MySqlDbType.Int32;
                 // pIdEmpleado.Size = 60;
-                pIdProducto.Value = Producto.IdProducto;
+                pIdProducto.Value = IdProducto;
                 comando.Parameters.Add(pIdProducto);
 
                 //Ejecutamos nuestro comando
 
                 rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Producto";
+                Console.WriteLine("rpta es : " + rpta);
 
             }
             catch (Exception ex)

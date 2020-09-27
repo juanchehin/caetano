@@ -52,7 +52,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Location = new System.Drawing.Point(761, 9);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 122);
+            this.pictureBox2.Size = new System.Drawing.Size(137, 133);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
@@ -135,14 +135,14 @@
             this.dataListadoProductos.Name = "dataListadoProductos";
             this.dataListadoProductos.ReadOnly = true;
             this.dataListadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoProductos.Size = new System.Drawing.Size(864, 332);
+            this.dataListadoProductos.Size = new System.Drawing.Size(864, 367);
             this.dataListadoProductos.TabIndex = 0;
             this.dataListadoProductos.SelectionChanged += new System.EventHandler(this.dataListadoProductos_SelectionChanged);
             // 
             // lblTotalProductos
             // 
             this.lblTotalProductos.AutoSize = true;
-            this.lblTotalProductos.Location = new System.Drawing.Point(767, 169);
+            this.lblTotalProductos.Location = new System.Drawing.Point(701, 169);
             this.lblTotalProductos.Name = "lblTotalProductos";
             this.lblTotalProductos.Size = new System.Drawing.Size(35, 13);
             this.lblTotalProductos.TabIndex = 7;
@@ -152,7 +152,7 @@
             // 
             this.btnRefrescar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.BackgroundImage")));
             this.btnRefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefrescar.Location = new System.Drawing.Point(865, 139);
+            this.btnRefrescar.Location = new System.Drawing.Point(865, 148);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(33, 31);
             this.btnRefrescar.TabIndex = 13;
@@ -164,9 +164,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(34, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 13);
+            this.label2.Size = new System.Drawing.Size(171, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Busqueda por codigo o producto";
+            this.label2.Text = "Busqueda por nombre de producto";
             // 
             // formProductos
             // 

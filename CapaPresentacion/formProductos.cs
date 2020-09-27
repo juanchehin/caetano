@@ -68,7 +68,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Confirmación
         private void MensajeOk(string mensaje)
         {
-            MessageBox.Show(mensaje, "Gomeria Leon", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Peluqueria Caetano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -76,7 +76,7 @@ namespace CapaPresentacion
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Gomeria Leon", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Peluqueria Caetano", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -84,11 +84,11 @@ namespace CapaPresentacion
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el producto", "Gomeria Leon", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el producto", "Peluqueria Caetano", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
-                    // CN_Productos.Eliminar(this.IdProducto);
+                    CN_Productos.Eliminar(this.IdProducto);
                     this.MostrarProductos();
                     this.MensajeOk("Se elimino de forma correcta el producto");
                 }
@@ -135,7 +135,7 @@ namespace CapaPresentacion
         private void BuscarProducto()
         {
             Console.WriteLine("this.txtBuscar.Text es " + this.txtBuscar.Text);
-            // this.dataListadoProductos.DataSource = objetoCN.BuscarProducto(this.txtBuscar.Text);
+            this.dataListadoProductos.DataSource = objetoCN.BuscarProducto(this.txtBuscar.Text);
             // this.OcultarColumnas();
             lblTotalProductos.Text = "Total de Registros: " + Convert.ToString(dataListadoProductos.Rows.Count);
         }
