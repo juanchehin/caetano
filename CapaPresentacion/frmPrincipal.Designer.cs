@@ -158,6 +158,7 @@
             this.btnCompras.Size = new System.Drawing.Size(147, 123);
             this.btnCompras.TabIndex = 8;
             this.btnCompras.UseVisualStyleBackColor = true;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnProveedores
             // 
@@ -239,6 +240,7 @@
             this.button1.Size = new System.Drawing.Size(147, 114);
             this.button1.TabIndex = 23;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // label9
             // 

@@ -100,5 +100,19 @@ namespace CapaPresentacion
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            formTransacciones frm = new formTransacciones();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            formUsuarios frm = new formUsuarios();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

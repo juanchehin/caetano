@@ -142,6 +142,18 @@
     <Compile Include="formProveedores.Designer.cs">
       <DependentUpon>formProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="formTransacciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formTransacciones.Designer.cs">
+      <DependentUpon>formTransacciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formUsuarios.Designer.cs">
+      <DependentUpon>formUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formProveedores.resx">
       <DependentUpon>formProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formTransacciones.resx">
+      <DependentUpon>formTransacciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUsuarios.resx">
+      <DependentUpon>formUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

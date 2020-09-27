@@ -22,7 +22,7 @@ namespace CapaDatos
             // ConectionString => "datasource =localhost;username = root;password =;database=gomerialeon"
             try
             {
-                MessageBox.Show("Estas conectado!");
+                // MessageBox.Show("Estas conectado!");
                 Con.Open();
                 return Con;
             }
@@ -40,7 +40,7 @@ namespace CapaDatos
             try
             {
                 Con.Close();
-                MessageBox.Show("Conexion cerrada!");
+                // MessageBox.Show("Conexion cerrada!");
                 return Con;
             }
             catch (Exception e)

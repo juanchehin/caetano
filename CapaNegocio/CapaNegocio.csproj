@@ -70,6 +70,8 @@
     <Compile Include="CN_Cursos.cs" />
     <Compile Include="CN_Productos.cs" />
     <Compile Include="CN_Proveedores.cs" />
+    <Compile Include="CN_Transacciones.cs" />
+    <Compile Include="CN_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

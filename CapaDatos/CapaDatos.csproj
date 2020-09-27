@@ -75,6 +75,8 @@
     <Compile Include="CD_Cursos.cs" />
     <Compile Include="CD_Productos.cs" />
     <Compile Include="CD_Proveedores.cs" />
+    <Compile Include="CD_Transacciones.cs" />
+    <Compile Include="CD_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
