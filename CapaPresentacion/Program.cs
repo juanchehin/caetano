@@ -21,7 +21,7 @@ namespace CapaPresentacion
             Application.SetCompatibleTextRenderingDefault(false);
             // OpenDetailFormOnClose = false;
             // Application.Run(new formSplashScreen());   // Cambiar por new formLogin()
-            Application.Run(new frmPrincipal());
+            Application.Run(new formLogin());
 
             if (OpenDetailFormOnClose)
             {

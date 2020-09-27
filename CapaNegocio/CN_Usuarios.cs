@@ -74,14 +74,14 @@ namespace CapaNegocio
 
             return Obj.Editar(Obj);
         }
-
-        public DataTable BuscarProducto(string textobuscar)
+        */
+        public string Login(string usuario,string pass)
         {
-            Console.WriteLine("textobuscar en capa negocio es : " + textobuscar);
-            CD_Productos Obj = new CD_Productos();
-            Obj.TextoBuscar = textobuscar;
-            return Obj.BuscarProducto(Obj);
-        }*/
+            // Console.WriteLine("textobuscar en capa negocio es : " + textobuscar);
+            CD_Usuarios Obj = new CD_Usuarios();
+            // Obj.TextoBuscar = textobuscar;
+            return Obj.Login(usuario,pass);
+        }
 
     }
 }

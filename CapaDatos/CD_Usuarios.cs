@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Reflection.Emit;
 // using System.Data.MySqlClient;
 
 
@@ -300,40 +301,51 @@ namespace CapaDatos
             comando.Parameters.Clear();
             return rpta;
         }
-
-        public DataTable BuscarProducto(CD_Productos Producto)
+        */
+        public string Login(string usuario,string pass)
         {
+            string rpta = "";
+            Console.WriteLine("usuario es : " + usuario);
+            Console.WriteLine("pass es : " + pass);
             try
             {
+                Console.WriteLine("usuario es : " + usuario);
+                Console.WriteLine("pass es : " + pass);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "bsp_buscar_producto";
+                comando.CommandText = "bsp_login";
 
-                MySqlParameter pTextoBuscar = new MySqlParameter();
-                pTextoBuscar.ParameterName = "@pTextoBuscar";
-                pTextoBuscar.MySqlDbType = MySqlDbType.VarChar;
-                pTextoBuscar.Size = 30;
-                pTextoBuscar.Value = Producto.TextoBuscar;
-                comando.Parameters.Add(pTextoBuscar);
+                MySqlParameter pUsuario = new MySqlParameter();
+                pUsuario.ParameterName = "@pUsuario";
+                pUsuario.MySqlDbType = MySqlDbType.VarChar;
+                pUsuario.Size = 30;
+                pUsuario.Value = usuario;
+                comando.Parameters.Add(pUsuario);
 
-                leer = comando.ExecuteReader();
-                tabla.Load(leer);
-                Console.WriteLine("tabla en capa datos es : " + tabla);
-                Console.WriteLine("leer en capa datos es : " + leer.ToString());
-                comando.Parameters.Clear();
-                conexion.CerrarConexion();
+                MySqlParameter pPassword = new MySqlParameter();
+                pPassword.ParameterName = "@pPassword";
+                pPassword.MySqlDbType = MySqlDbType.VarChar;
+                pPassword.Size = 35;
+                pPassword.Value = pass;
+                comando.Parameters.Add(pPassword);
 
-                // return tabla;
+                rpta = comando.ExecuteScalar().ToString() == "Ok" ? "Ok" : "Error de credenciales";
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entro en el catch y tabla es en capa datos" + tabla);
-                Console.WriteLine("Entro en el catch y ex es en capa datos" + ex.Message);
 
-                tabla = null;
+                rpta = ex.Message;
+                Console.WriteLine("rpta es : " + rpta);
             }
-            return tabla;
+            finally
+            {
+                //if (conexion. == ConnectionState.Open) 
+                conexion.CerrarConexion();
+            }
+            comando.Parameters.Clear();
+            return rpta;
 
-        }*/
+        }
     }
 }
