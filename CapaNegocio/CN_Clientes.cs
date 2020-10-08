@@ -15,17 +15,29 @@ namespace CapaNegocio
 
         //Método Insertar que llama al método Insertar de la clase DArticulo
         //de la CapaDatos
-        /*public static string Insertar(string Titular, string Transporte, string Telefono)
+        public static string Insertar(string Apellidos, string Nombres, string DNI,string FechaNac, string Email, string Telefono
+            , string Direccion, string Ciudad, string Provincia, string Sexo, string Observaciones)
         {
-            // Console.WriteLine("En insertar , nombre es " + nombre);
+            Console.WriteLine("En insertar , nombre es " + Nombres);
+            Console.WriteLine("En insertar , FechaNac es " + FechaNac);
 
             CD_Clientes Obj = new CD_Clientes();
-            Obj.Titular = Titular;
-            Obj.Transporte = Transporte;
+            Obj.Apellidos = Apellidos;
+            Obj.Nombres = Nombres;
+            Obj.DNI = DNI;
+            Obj.FechaNac = FechaNac;
+            Obj.Email = Email;
             Obj.Telefono = Telefono;
+            Obj.Direccion = Direccion;
+            Obj.Ciudad = Ciudad;
+            Obj.Provincia = Provincia;
+            Obj.Sexo = Sexo;
+            Obj.FechaNac = FechaNac;
+            // Obj.EstadoPer = EstadoPer;
+            Obj.Comentarios = Observaciones;
 
             return Obj.Insertar(Obj);
-        }*/
+        }
 
         public DataTable MostrarClientes()
         {
@@ -39,7 +51,7 @@ namespace CapaNegocio
             CD_Clientes Obj = new CD_Clientes();
             Obj.IdCliente = IdCliente;
             return Obj.Eliminar(Obj);
-        }
+        }*/
 
         // Devuelve solo un Cliente
         public DataTable MostrarCliente(int IdCliente)
@@ -51,7 +63,7 @@ namespace CapaNegocio
             Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
-
+        /*
         public static string Editar(int IdCliente, string Transporte, string Titular, string Telefono)
         {
             

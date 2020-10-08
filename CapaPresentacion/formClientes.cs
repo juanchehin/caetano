@@ -93,10 +93,10 @@ namespace CapaPresentacion
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
             Console.WriteLine("this.IdCliente en click nuevo es  : " + this.IdCliente);
-            /* formNuevoEditarClientes frm = new formNuevoEditarClientes(this.IdCliente, true);
+            formNuevoEditarClientes frm = new formNuevoEditarClientes(this.IdCliente, true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void dataListadoClientes_SelectionChanged(object sender, EventArgs e)
