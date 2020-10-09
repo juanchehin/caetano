@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbIncluyeBajas = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(255, 9);
+            this.label1.Location = new System.Drawing.Point(392, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 91);
             this.label1.TabIndex = 5;
@@ -60,7 +61,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(683, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(896, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(68, 84);
             this.pictureBox2.TabIndex = 9;
@@ -76,7 +77,7 @@
             this.dataListadoClientes.Name = "dataListadoClientes";
             this.dataListadoClientes.ReadOnly = true;
             this.dataListadoClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoClientes.Size = new System.Drawing.Size(703, 292);
+            this.dataListadoClientes.Size = new System.Drawing.Size(945, 346);
             this.dataListadoClientes.TabIndex = 10;
             this.dataListadoClientes.SelectionChanged += new System.EventHandler(this.dataListadoClientes_SelectionChanged);
             // 
@@ -91,7 +92,7 @@
             // 
             // btnNuevoCliente
             // 
-            this.btnNuevoCliente.Location = new System.Drawing.Point(393, 137);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(393, 143);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(186, 23);
             this.btnNuevoCliente.TabIndex = 15;
@@ -109,7 +110,7 @@
             // 
             // botonEditarListado
             // 
-            this.botonEditarListado.Location = new System.Drawing.Point(312, 137);
+            this.botonEditarListado.Location = new System.Drawing.Point(312, 142);
             this.botonEditarListado.Name = "botonEditarListado";
             this.botonEditarListado.Size = new System.Drawing.Size(75, 23);
             this.botonEditarListado.TabIndex = 14;
@@ -119,7 +120,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(585, 137);
+            this.btnEliminar.Location = new System.Drawing.Point(585, 143);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 13;
@@ -129,7 +130,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(231, 137);
+            this.btnBuscar.Location = new System.Drawing.Point(231, 142);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 11;
@@ -150,7 +151,7 @@
             // 
             this.btnRefrescar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.BackgroundImage")));
             this.btnRefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefrescar.Location = new System.Drawing.Point(703, 123);
+            this.btnRefrescar.Location = new System.Drawing.Point(945, 143);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(31, 32);
             this.btnRefrescar.TabIndex = 30;
@@ -166,11 +167,22 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
+            // cbIncluyeBajas
+            // 
+            this.cbIncluyeBajas.AutoSize = true;
+            this.cbIncluyeBajas.Location = new System.Drawing.Point(851, 142);
+            this.cbIncluyeBajas.Name = "cbIncluyeBajas";
+            this.cbIncluyeBajas.Size = new System.Drawing.Size(88, 17);
+            this.cbIncluyeBajas.TabIndex = 32;
+            this.cbIncluyeBajas.Text = "Incluye bajas";
+            this.cbIncluyeBajas.UseVisualStyleBackColor = true;
+            // 
             // formClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 485);
+            this.ClientSize = new System.Drawing.Size(1009, 554);
+            this.Controls.Add(this.cbIncluyeBajas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.label2);
@@ -186,7 +198,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formClientes";
             this.Text = "                                                                                 " +
-    "                                 ..:: Clientes ::..";
+    "                                                        ..:: Clientes ::..";
             this.Load += new System.EventHandler(this.formClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoClientes)).EndInit();
@@ -210,5 +222,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox cbIncluyeBajas;
     }
 }

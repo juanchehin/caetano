@@ -31,7 +31,8 @@ namespace CapaPresentacion
         }
         public void MostrarClientes()
         {
-            dataListadoClientes.DataSource = objetoCN.MostrarClientes();
+            Console.WriteLine("this.cbIncluyeBajas.Checked " + this.cbIncluyeBajas.Checked);
+            dataListadoClientes.DataSource = objetoCN.MostrarClientes(this.cbIncluyeBajas.Checked);
             dataListadoClientes.Columns[0].Visible = false;
             lblTotalClientes.Text = "Total de Registros: " + Convert.ToString(dataListadoClientes.Rows.Count);
             // this.banderaFormularioHijo = false;
@@ -58,10 +59,10 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente", "Gomeria Leon", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente", "Caetano", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
@@ -74,13 +75,13 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            this.Close();*/
+            this.Close();
         }
 
         private void BuscarCliente()
         {
             Console.WriteLine("this.txtBuscar.Text es " + this.txtBuscar.Text);
-            // this.dataListadoClientes.DataSource = objetoCN.BuscarCliente(this.txtBuscar.Text);
+            this.dataListadoClientes.DataSource = objetoCN.BuscarCliente(this.txtBuscar.Text);
             // this.OcultarColumnas();
             lblTotalClientes.Text = "Total de Registros: " + Convert.ToString(dataListadoClientes.Rows.Count);
         }
@@ -112,10 +113,10 @@ namespace CapaPresentacion
 
         private void botonEditarListado_Click_1(object sender, EventArgs e)
         {
-            /*formNuevoEditarClientes frm = new formNuevoEditarClientes(this.IdCliente, false);
+            formNuevoEditarClientes frm = new formNuevoEditarClientes(this.IdCliente, false);
             frm.MdiParent = this.MdiParent;
             frm.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void formClientes_Load(object sender, EventArgs e)
@@ -125,10 +126,10 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente", "Gomeria Leon", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el cliente","Peluqueria caetano", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
@@ -141,7 +142,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            this.Close();*/
+            // this.Close();
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
@@ -154,6 +155,7 @@ namespace CapaPresentacion
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
+            txtBuscar.Clear();
             this.MostrarClientes();
         }
     }

@@ -77,22 +77,34 @@ namespace CapaDatos
         DataTable tabla = new DataTable();
         MySqlCommand comando = new MySqlCommand();
 
-
-        public DataTable DameClientes()
+        // ==================================================
+        //  Carga los clientes de la BD con la opcion de incluye bajas
+        // ==================================================
+        public DataTable DameClientes(bool incluyeBajas)
         {
-
+            Console.WriteLine("incluyeBajas en capa datos es : " + incluyeBajas);
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_dame_clientes";
 
+            MySqlParameter pincluyeBajas = new MySqlParameter();
+            pincluyeBajas.ParameterName = "@pincluyeBajas";
+            pincluyeBajas.MySqlDbType = MySqlDbType.Int32;
+            // pIdProducto.Size = 60;
+            pincluyeBajas.Value = incluyeBajas;
+            comando.Parameters.Add(pincluyeBajas);
+
             tabla.Clear();
             leer = comando.ExecuteReader();
             tabla.Load(leer);
+            comando.Parameters.Clear();
             conexion.CerrarConexion();
             return tabla;
 
         }
-        // devuelve un cliente dado su ID
+        // ==================================================
+        //  Devuelve un cliente dado su ID
+        // ==================================================
         public DataTable MostrarCliente(int IdCliente)
         {
             //Console.WriteLine("IdCliente en capa datos es : " + IdCliente);
@@ -116,32 +128,10 @@ namespace CapaDatos
             return tabla;
 
         }
-        // devuelve solo 1 cliente de la BD
-        /*public DataTable DameCortes(int IdCliente)
-        {
-            Console.WriteLine("IdCliente en capa datos es : " + IdCliente);
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "bsp_dame_cliente";
-
-            MySqlParameter pIdCliente = new MySqlParameter();
-            pIdCliente.ParameterName = "@pIdCliente";
-            pIdCliente.MySqlDbType = MySqlDbType.Int32;
-            // pIdProducto.Size = 60;
-            pIdCliente.Value = IdCliente;
-            comando.Parameters.Add(pIdCliente);
-
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-
-            return tabla;
-
-        }
-
-        public string Editar(CD_Cortes Cliente)
+        // ==================================================
+        //  Edita un cliente dado su ID
+        // ==================================================
+        public string Editar(CD_Clientes Cliente)
         {
             Console.WriteLine("Cliente.IdCliente es 1 : " + Cliente.IdCliente);
             string rpta = "";
@@ -159,19 +149,40 @@ namespace CapaDatos
                 pIdCliente.Value = Cliente.IdCliente;
                 comando.Parameters.Add(pIdCliente);
 
-                MySqlParameter pTransporte = new MySqlParameter();
-                pTransporte.ParameterName = "@pTransporte";
-                pTransporte.MySqlDbType = MySqlDbType.VarChar;
-                pTransporte.Size = 60;
-                pTransporte.Value = Cliente.Transporte;
-                comando.Parameters.Add(pTransporte);
+                MySqlParameter pApellidos = new MySqlParameter();
+                pApellidos.ParameterName = "@pApellidos";
+                pApellidos.MySqlDbType = MySqlDbType.VarChar;
+                pApellidos.Size = 60;
+                pApellidos.Value = Cliente.Apellidos;
+                comando.Parameters.Add(pApellidos);
 
-                MySqlParameter pTitular = new MySqlParameter();
-                pTitular.ParameterName = "@pTitular";
-                pTitular.MySqlDbType = MySqlDbType.VarChar;
-                pTitular.Size = 30;
-                pTitular.Value = Cliente.Titular;
-                comando.Parameters.Add(pTitular);
+                MySqlParameter pNombres = new MySqlParameter();
+                pNombres.ParameterName = "@pNombres";
+                pNombres.MySqlDbType = MySqlDbType.VarChar;
+                pNombres.Size = 30;
+                pNombres.Value = Cliente.Nombres;
+                comando.Parameters.Add(pNombres);
+
+                MySqlParameter pDNI = new MySqlParameter();
+                pDNI.ParameterName = "@pDNI";
+                pDNI.MySqlDbType = MySqlDbType.VarChar;
+                pDNI.Size = 15;
+                pDNI.Value = Cliente.DNI;
+                comando.Parameters.Add(pDNI);
+
+                MySqlParameter pFechaNac = new MySqlParameter();
+                pFechaNac.ParameterName = "@pFechaNac";
+                pFechaNac.MySqlDbType = MySqlDbType.Date;
+                pFechaNac.Size = 15;
+                pFechaNac.Value = Cliente.FechaNac;
+                comando.Parameters.Add(pFechaNac);
+
+                MySqlParameter pEmail = new MySqlParameter();
+                pEmail.ParameterName = "@pEmail";
+                pEmail.MySqlDbType = MySqlDbType.VarChar;
+                pEmail.Size = 50;
+                pEmail.Value = Cliente.Email;
+                comando.Parameters.Add(pEmail);
 
                 MySqlParameter pTelefono = new MySqlParameter();
                 pTelefono.ParameterName = "@pTelefono";
@@ -179,6 +190,41 @@ namespace CapaDatos
                 pTelefono.Size = 15;
                 pTelefono.Value = Cliente.Telefono;
                 comando.Parameters.Add(pTelefono);
+
+                MySqlParameter pDireccion = new MySqlParameter();
+                pDireccion.ParameterName = "@pDireccion";
+                pDireccion.MySqlDbType = MySqlDbType.VarChar;
+                pDireccion.Size = 45;
+                pDireccion.Value = Cliente.Direccion;
+                comando.Parameters.Add(pDireccion);
+
+                MySqlParameter pCiudad = new MySqlParameter();
+                pCiudad.ParameterName = "@pCiudad";
+                pCiudad.MySqlDbType = MySqlDbType.VarChar;
+                pCiudad.Size = 45;
+                pCiudad.Value = Cliente.Ciudad;
+                comando.Parameters.Add(pCiudad);
+
+                MySqlParameter pProvincia = new MySqlParameter();
+                pProvincia.ParameterName = "@pProvincia";
+                pProvincia.MySqlDbType = MySqlDbType.VarChar;
+                pProvincia.Size = 45;
+                pProvincia.Value = Cliente.Provincia;
+                comando.Parameters.Add(pProvincia);
+
+                MySqlParameter pSexo = new MySqlParameter();
+                pSexo.ParameterName = "@pSexo";
+                pSexo.MySqlDbType = MySqlDbType.VarChar;
+                pSexo.Size = 1;
+                pSexo.Value = Cliente.Sexo;
+                comando.Parameters.Add(pSexo);
+
+                MySqlParameter pComentarios = new MySqlParameter();
+                pComentarios.ParameterName = "@pComentarios";
+                pComentarios.MySqlDbType = MySqlDbType.VarChar;
+                pComentarios.Size = 255;
+                pComentarios.Value = Cliente.Comentarios;
+                comando.Parameters.Add(pComentarios);
 
                 rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "No se edito el Registro";
 
@@ -196,9 +242,9 @@ namespace CapaDatos
             comando.Parameters.Clear();
             return rpta;
         }
-        */
-        //Métodos
-        //Insertar
+        // ==================================================
+        //  Inserta un cliente dado sus datos
+        // ==================================================
         public string Insertar(CD_Clientes Cliente)
         {
             string rpta = "";
@@ -308,15 +354,17 @@ namespace CapaDatos
             return rpta;
 
         }
-        /*
-        // Metodo ELIMINAR Empleado (da de baja)
-        public string Eliminar(CD_Cortes Cliente)
+
+        // ==================================================
+        //  Elimina un cliente dado su ID
+        // ==================================================
+        public string Eliminar(CD_Clientes Cliente)
         {
             string rpta = "";
             // SqlConnection SqlCon = new SqlConnection();
             try
             {
-
+                Console.WriteLine("Cliente.IdCliente : " + Cliente.IdCliente);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_eliminar_cliente";
@@ -337,6 +385,7 @@ namespace CapaDatos
             catch (Exception ex)
             {
                 rpta = ex.Message;
+                Console.WriteLine("");
             }
             finally
             {
@@ -345,8 +394,10 @@ namespace CapaDatos
             }
             return rpta;
         }
-
-        public DataTable BuscarCliente(CD_Cortes Cliente)
+        // ==================================================
+        //  Busca un cliente dado un texto a buscar
+        // ==================================================
+        public DataTable BuscarCliente(CD_Clientes Cliente)
         {
             try
             {
@@ -379,6 +430,6 @@ namespace CapaDatos
             }
             return tabla;
 
-        }*/
+        }
     }
 }

@@ -41,6 +41,11 @@ namespace CapaPresentacion
             InitializeComponent();
             this.IdCliente = parametro;
             this.bandera = IsNuevoEditar;
+
+            // Cargo los valores a usar en el combo box
+            string[] valores = { "Hombre", "Mujer" };
+
+            cbSexo.DataSource = valores;
         }
 
         /*private void formNuevoEditarClientes_Load(object sender, EventArgs e)
@@ -67,8 +72,8 @@ namespace CapaPresentacion
                 Direccion = Convert.ToString(row["Direccion"]);
                 Ciudad = Convert.ToString(row["Ciudad"]);
                 Provincia = Convert.ToString(row["Provincia"]);
-                Sexo = Convert.ToString(row["Sexo"]);
-                Observaciones = Convert.ToString(row["Observaciones"]);
+                // Sexo = Convert.ToString(row["Sexo"]);
+                Observaciones = Convert.ToString(row["Comentarios"]);
                 if (row["FechaNac"] == DBNull.Value)
                 {
                     FechaNac = Convert.ToDateTime("2010-12-25");
@@ -78,6 +83,19 @@ namespace CapaPresentacion
                 {
                     FechaNac = Convert.ToDateTime(row["FechaNac"]);
                     dpFechaNac.Value = FechaNac;
+
+                }
+                Console.WriteLine("Convert.ToString(row sexo ) " + Convert.ToString(row["Sexo"]));
+                if (Convert.ToString(row["Sexo"]) == "H")
+                {
+                    // FechaNac = Convert.ToDateTime("2010-12-25");
+                    Sexo = "Hombre";
+                }
+                else
+                {
+                    // FechaNac = Convert.ToDateTime(row["FechaNac"]);
+                    // dpFechaNac.Value = FechaNac;
+                    Sexo = "Mujer";
 
                 }
                 // FechaNac = Convert.ToString(row["FechaNac"]);
@@ -95,68 +113,6 @@ namespace CapaPresentacion
                 cbSexo.Text = Sexo;
                 rTextObservaciones.Text = Observaciones;
             }
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-           /* try
-            {
-                string rpta = "";
-                if (this.txtApellidos.Text == string.Empty || this.txtNombres.Text == string.Empty)
-                {
-                    MensajeError("Falta ingresar algunos datos");
-                }
-                else
-                {
-                    if (this.IsNuevo)
-                    {
-                        rpta = CN_Clientes.Insertar(this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtDNI.Text.Trim()
-                            , this.FechaNac.Trim(), this.txtEmail.Text.Trim(), this.txtTelefono.Text.Trim(), this.txtDireccion.Text.Trim()
-                            , this.txtCiudad.Text.Trim(), this.txtProvincia.Text.Trim(), this.cbSexo.Text.Trim(), this.rTextObservaciones.Text.Trim());
-                    }
-                    else
-                    {
-                        // rpta = CN_Clientes.Editar(this.IdCliente, this.txtTransporte.Text.Trim(), this.txtTitular.Text.Trim(), this.txtTelefono.Text.Trim());
-                    }
-
-                    if (rpta.Equals("OK"))
-                    {
-                        if (this.IsNuevo)
-                        {
-                            this.MensajeOk("Se Insertó de forma correcta el registro");
-                        }
-                        else
-                        {
-                            this.MensajeOk("Se Actualizó de forma correcta el registro");
-                        }
-                    }
-                    else
-                    {
-                        this.MensajeError(rpta);
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-            this.Close();*/
-        }
-        //Mostrar Mensaje de Error
-        private void MensajeError(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Caetano", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        private void MensajeOk(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Caetano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void formNuevoEditarClientes_Load(object sender, EventArgs e)
@@ -234,7 +190,23 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            // this.Close();
+            this.Close();
+        }
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Caetano", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Caetano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
