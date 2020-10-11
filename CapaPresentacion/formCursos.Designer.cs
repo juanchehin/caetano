@@ -110,7 +110,7 @@
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(186, 23);
             this.btnNuevoProducto.TabIndex = 29;
-            this.btnNuevoProducto.Text = "Nuevo producto";
+            this.btnNuevoProducto.Text = "Nuevo curso";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
             // 
             // dataListadoCursos

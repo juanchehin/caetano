@@ -49,6 +49,7 @@ namespace CapaDatos
         MySqlDataReader leer;
         DataTable tabla = new DataTable();
         MySqlCommand comando = new MySqlCommand();
+        List<string> proveedores = new List<string>();
 
         // ==================================================
         //  Permite devolver todos los proveedores de la BD
@@ -68,8 +69,47 @@ namespace CapaDatos
             return tabla;
 
         }
+        // ==================================================
+        //  Permite devolver solo los nombres de los proveedores dado
+        //  para cargar en el combo box.
+        // ==================================================
+        public List<string> DameNombresProveedores()
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_dame_nombres_proveedores";
 
-        // Devuelve un solo proveedor dado un ID
+            tabla.Clear();
+            // leer = comando.ExecuteReader();
+            // tabla.Load(leer);
+            // Console.WriteLine("leer valor : " + leer);
+
+            using (comando)
+            {
+                using (leer = comando.ExecuteReader())
+                {
+                    // Console.WriteLine("leer.Read() antes : " + leer.Read());
+                    while (leer.Read())
+                    {
+                        Console.WriteLine("entra while ");
+                        Console.WriteLine("leer.FieldCount : " + leer.FieldCount);
+                        for (int i = 0; i < leer.FieldCount; i++)
+                        {
+                            Console.WriteLine("i-esimo valor : " + Convert.ToString(leer.GetValue(i)));
+                            proveedores.Add(Convert.ToString(leer.GetValue(i)));
+                        }
+                    }
+                }
+            }
+            // string columna = leer["Proveedor"].
+
+            // conexion.CerrarConexion();
+            return proveedores;
+
+        }
+        // ==================================================
+        //  Permite devolver un proveedor dado su ID
+        // ==================================================
         public DataTable MostrarProveedor(int IdProveedor)
         {
             Console.WriteLine("proveedor en capa datos es : " + IdProveedor);

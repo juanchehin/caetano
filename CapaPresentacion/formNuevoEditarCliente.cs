@@ -19,7 +19,7 @@ namespace CapaPresentacion
         // int parametroActual;
         bool bandera;
         bool IsNuevo = false;
-        bool IsEditar = false;
+        // bool IsEditar = false;
 
         private int IdCliente;
         private string Apellidos;
@@ -123,13 +123,13 @@ namespace CapaPresentacion
                 lblEditarNuevo.Text = "Nuevo";
                 // this.MostrarProducto(this.IdProducto);
                 this.IsNuevo = true;
-                this.IsEditar = false;
+                //this.IsEditar = false;
             }
             else
             {
                 lblEditarNuevo.Text = "Editar";
                 this.IsNuevo = false;
-                this.IsEditar = true;
+                //this.IsEditar = true;
                 this.MostrarCliente(this.IdCliente);
             }
         }

@@ -3,6 +3,10 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 // using System.Data.MySqlClient;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
 namespace CapaDatos
@@ -54,6 +58,8 @@ namespace CapaDatos
         MySqlDataReader leer;
         DataTable tabla = new DataTable();
         MySqlCommand comando = new MySqlCommand();
+        List<string> categorias = new List<string>();
+
         public DataTable Mostrar()
         {
 
@@ -94,7 +100,41 @@ namespace CapaDatos
             return tabla;
 
         }
+        // ==================================================
+        //  Permite devolver solo los nombres de las CATEGORIAS dado
+        //  para cargar en el combo box.
+        // ==================================================
+        public List<string> DameNombresCategorias()
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_dame_nombres_categorias";
 
+            tabla.Clear();
+            // leer = comando.ExecuteReader();
+            // tabla.Load(leer);
+            // Console.WriteLine("leer valor : " + leer);
+
+            using (comando)
+            {
+                using (leer = comando.ExecuteReader())
+                {
+                    // Console.WriteLine("leer.Read() antes : " + leer.Read());
+                    while (leer.Read())
+                    {
+                        for (int i = 0; i < leer.FieldCount; i++)
+                        {
+                            categorias.Add(Convert.ToString(leer.GetValue(i)));
+                        }
+                    }
+                }
+            }
+            // string columna = leer["Proveedor"].
+
+            // conexion.CerrarConexion();
+            return categorias;
+
+        }
         //Métodos
         //Insertar
         public string Insertar(CD_Productos Producto)

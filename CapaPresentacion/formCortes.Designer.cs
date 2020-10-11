@@ -109,7 +109,7 @@
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(186, 23);
             this.btnNuevoCliente.TabIndex = 39;
-            this.btnNuevoCliente.Text = "Nuevo cliente";
+            this.btnNuevoCliente.Text = "Nuevo corte";
             this.btnNuevoCliente.UseVisualStyleBackColor = true;
             // 
             // txtBuscar

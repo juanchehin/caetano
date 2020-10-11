@@ -225,7 +225,6 @@ namespace CapaDatos
                 pComentarios.Size = 255;
                 pComentarios.Value = Cliente.Comentarios;
                 comando.Parameters.Add(pComentarios);
-
                 rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "No se edito el Registro";
 
             }

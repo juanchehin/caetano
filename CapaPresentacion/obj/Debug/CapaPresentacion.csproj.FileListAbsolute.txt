@@ -81,3 +81,4 @@ D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresent
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formTransacciones.resources
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formUsuarios.resources
 D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formNuevoEditarClientes.resources
+D:\Visual Studio Programs\Caetano\caetano\CapaPresentacion\obj\Debug\CapaPresentacion.formNuevoEditarProducto.resources

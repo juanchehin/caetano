@@ -29,10 +29,17 @@ namespace CapaNegocio
         // Muestra todos los proveedores dados de alta en la BD
         public DataTable MostrarProveedores()
         {
-
             DataTable tabla = new DataTable();
             tabla = objetoCD.Mostrar();
             return tabla;
+        }
+        // Carga los nombres de los proveedores para cargarlos en el combo box
+        public List<string> DameNombresProveedores()
+        {
+            List<string> proveedores = new List<string>();
+            proveedores = objetoCD.DameNombresProveedores();
+            Console.WriteLine("proveedores capa negocio" + proveedores);
+            return proveedores;
         }
         // Devuelve solo un producto
         public DataTable MostrarProveedor(int IdProveedor)

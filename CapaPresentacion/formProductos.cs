@@ -103,20 +103,20 @@ namespace CapaPresentacion
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            /*Console.WriteLine("this.IdProducto en click nuevo es  : " + this.IdProducto);
+            Console.WriteLine("this.IdProducto en click nuevo es  : " + this.IdProducto);
             formNuevoEditarProducto frm = new formNuevoEditarProducto(this.IdProducto,true);
             frm.MdiParent = this.MdiParent;
-            frm.Show();*/
+            frm.Show();
             // this.Close();
         }
 
         private void botonEditarListado_Click(object sender, EventArgs e)
         {
-            /*Console.WriteLine("this.IdProducto en click editar es  : " + this.IdProducto);
+            Console.WriteLine("this.IdProducto en click editar es  : " + this.IdProducto);
             formNuevoEditarProducto frm = new formNuevoEditarProducto(this.IdProducto,false);
             frm.MdiParent = this.MdiParent;
             frm.Show();
-            Console.WriteLine("Esto se deberia mostrar al cerrar el form de editar");*/
+            Console.WriteLine("Esto se deberia mostrar al cerrar el form de editar");
             // this.Close();
         }
 

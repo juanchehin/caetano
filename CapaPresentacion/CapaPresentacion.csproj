@@ -136,6 +136,12 @@
     <Compile Include="formNuevoEditarCliente.Designer.cs">
       <DependentUpon>formNuevoEditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="formNuevoEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarProducto.Designer.cs">
+      <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="formProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formNuevoEditarCliente.resx">
       <DependentUpon>formNuevoEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarProducto.resx">
+      <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formProductos.resx">
       <DependentUpon>formProductos.cs</DependentUpon>

@@ -99,7 +99,7 @@
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(186, 23);
             this.btnNuevoProducto.TabIndex = 20;
-            this.btnNuevoProducto.Text = "Nuevo producto";
+            this.btnNuevoProducto.Text = "Nueva transaccion";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
             // 
             // dataListadoTransacciones

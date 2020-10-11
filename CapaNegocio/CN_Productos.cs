@@ -56,6 +56,11 @@ namespace CapaNegocio
             // Obj.IdProducto = IdProducto;
             return Obj.Eliminar(IdProducto);
         }
+        public List<string> DameNombresCategorias()
+        {
+            CD_Productos Obj = new CD_Productos();
+            return Obj.DameNombresCategorias();
+        }
         /*
 
         public static string Editar(int IdProducto, string Producto, string Codigo, string PrecioCompra, string PrecioVenta, string Descripcion, string Stock)

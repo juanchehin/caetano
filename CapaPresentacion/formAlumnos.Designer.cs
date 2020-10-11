@@ -113,17 +113,17 @@ namespace CapaPresentacion
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(186, 23);
             this.btnNuevoProducto.TabIndex = 20;
-            this.btnNuevoProducto.Text = "Nuevo producto";
+            this.btnNuevoProducto.Text = "Nuevo alumno";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
             // 
-            // dataListadoProductos
+            // dataListadoAlumnos
             // 
             this.dataListadoAlumnos.AllowUserToAddRows = false;
             this.dataListadoAlumnos.AllowUserToDeleteRows = false;
             this.dataListadoAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoAlumnos.Location = new System.Drawing.Point(34, 197);
             this.dataListadoAlumnos.MultiSelect = false;
-            this.dataListadoAlumnos.Name = "dataListadoProductos";
+            this.dataListadoAlumnos.Name = "dataListadoAlumnos";
             this.dataListadoAlumnos.ReadOnly = true;
             this.dataListadoAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListadoAlumnos.Size = new System.Drawing.Size(864, 332);
