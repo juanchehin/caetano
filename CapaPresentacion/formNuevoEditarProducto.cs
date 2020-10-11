@@ -36,10 +36,13 @@ namespace CapaPresentacion
             if (pEsNuevo)
             {
                 lblEditarNuevo.Text = "Nuevo";
+                this.cbEstadoProd.Visible = false;
+                this.lblEstado.Visible = false;
             }
             else
             {
                 this.lblEditarNuevo.Text = "Editar";
+                // this.cbEstadoProd.Visible = ...valor traido de la BD...;
             }
             this.CargarProveedores();
             this.CargarCategorias();
@@ -51,6 +54,65 @@ namespace CapaPresentacion
         public void CargarCategorias()
         {
             this.cbCategorias.DataSource = objetoProd.DameNombresCategorias();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+                try
+                {
+                    string rpta = "";
+                    if (this.tbProducto.Text == string.Empty || this.tbPrecio.Text == string.Empty || this.tbPrecio.Text == string.Empty )
+                    {
+                        MensajeError("Falta ingresar algunos datos");
+                    }
+                    else
+                    {
+                        if (this.esNuevo)
+                        {
+                            rpta = CN_Productos.Insertar(this.tbProducto.Text.Trim(), this.tbCodigo.Text.Trim(),Convert.ToDecimal(this.tbPrecio.Text),
+                                this.lbDescripcion.Text.Trim());
+                        }
+                        else
+                        {
+                            // rpta = CN_Productos.Editar(this.tbProducto.Text.Trim(), this.tbCodigo.Text.Trim(), Convert.ToDecimal(this.tbPrecio.Text),
+                            //     this.lbDescripcion.Text.Trim(),this.estadoProd);
+                        }
+
+                        if (rpta.Equals("OK"))
+                        {
+                            if (this.esNuevo)
+                            {
+                                this.MensajeOk("Se Insertó de forma correcta el registro");
+                            }
+                            else
+                            {
+                                this.MensajeOk("Se Actualizó de forma correcta el registro");
+                            }
+                        }
+                        else
+                        {
+                            this.MensajeError(rpta);
+                        }
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+        }
+        // ==============================================
+        //      Mensajes
+        // =============================================
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Caetano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Caetano", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

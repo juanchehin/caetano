@@ -14,7 +14,10 @@ namespace CapaDatos
     public class CD_Productos
     {
         private int _IdProducto;
+        private int _IdProveedor;
+        private int _IdCategoria;
         private string _Producto;
+        private string _Codigo;
         private decimal _Precio;
         private int _Stock;
         private string _EstadoProd;
@@ -25,7 +28,10 @@ namespace CapaDatos
 
 
         public int IdProducto { get => _IdProducto; set => _IdProducto = value; }
+        public int IdProveedor { get => _IdProveedor; set => _IdProveedor = value; }
+        public int IdCategoria { get => _IdCategoria; set => _IdCategoria = value; }
         public string Producto { get => _Producto; set => _Producto = value; }
+        public string Codigo { get => _Codigo; set => _Codigo = value; }
         public decimal Precio { get => _Precio; set => _Precio = value; }
         public int Stock { get => _Stock; set => _Stock = value; }
         public string EstadoProd { get => _EstadoProd; set => _EstadoProd = value; }
@@ -38,10 +44,13 @@ namespace CapaDatos
 
         }
 
-        public CD_Productos(int IdProducto, string Producto,decimal Precio,int Stock,string Observaciones,string EstadoProd, string textobuscar)
+        public CD_Productos(int IdProducto,int IdProveedor,int IdCategoria, string Producto, string Codigo,decimal Precio,int Stock,string Observaciones,string EstadoProd, string textobuscar)
         {
             this.IdProducto = IdProducto;
+            this.IdProveedor = IdProveedor;
+            this.IdCategoria = IdCategoria;
             this.Producto = Producto;
+            this.Codigo = Codigo;
             this.Precio = Precio;
             this.Stock = Stock;
             this.EstadoProd = EstadoProd;
@@ -135,31 +144,32 @@ namespace CapaDatos
             return categorias;
 
         }
-        //Métodos
-        //Insertar
+        // ==================================================
+        //  Permite insertar un producto
+        // ==================================================
         public string Insertar(CD_Productos Producto)
         {
             string rpta = "";
-            // SqlConnection SqlCon = new SqlConnection();
             try
             {
 
                 Console.WriteLine("Producto es : " + Producto.Producto);
 
-                //Código
-                /*SqlCon.ConnectionString = Conexion.Cn;
-                SqlCon.Open();
-                //Establecer el Comando
-                SqlCommand SqlCmd = new SqlCommand(); */
-
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_producto";
 
-                /*SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spinsertar_articulo";
-                SqlCmd.CommandType = CommandType.StoredProcedure; */
+                MySqlParameter pIdProveedor = new MySqlParameter();
+                pIdProveedor.ParameterName = "@pIdProveedor";
+                pIdProveedor.MySqlDbType = MySqlDbType.Int32;
+                pIdProveedor.Value = Producto.IdProveedor;
+                comando.Parameters.Add(pIdProveedor);
 
+                MySqlParameter pIdCategoria = new MySqlParameter();
+                pIdCategoria.ParameterName = "@pIdCategoria";
+                pIdCategoria.MySqlDbType = MySqlDbType.Int32;
+                pIdCategoria.Value = Producto.IdCategoria;
+                comando.Parameters.Add(pIdCategoria);
 
                 MySqlParameter pProducto = new MySqlParameter();
                 pProducto.ParameterName = "@pProducto";
@@ -167,6 +177,12 @@ namespace CapaDatos
                 pProducto.Size = 60;
                 pProducto.Value = Producto.Producto;
                 comando.Parameters.Add(pProducto);
+
+                MySqlParameter pCodigo = new MySqlParameter();
+                pCodigo.ParameterName = "@pCodigo";
+                pCodigo.MySqlDbType = MySqlDbType.Int32;
+                pCodigo.Value = Producto.Codigo;
+                comando.Parameters.Add(pCodigo);
 
                 MySqlParameter pPrecio = new MySqlParameter();
                 pPrecio.ParameterName = "@pPrecio";
@@ -182,12 +198,12 @@ namespace CapaDatos
                 pStock.Value = Producto.Stock;
                 comando.Parameters.Add(pStock);
 
-                MySqlParameter pEstadoProd = new MySqlParameter();
+                /*MySqlParameter pEstadoProd = new MySqlParameter();
                 pEstadoProd.ParameterName = "@pEstadoProd";
                 pEstadoProd.MySqlDbType = MySqlDbType.VarChar;
                 pEstadoProd.Size = 1;
                 pEstadoProd.Value = Producto.EstadoProd;
-                comando.Parameters.Add(pEstadoProd);
+                comando.Parameters.Add(pEstadoProd);*/
 
                 MySqlParameter pObservaciones = new MySqlParameter();
                 pObservaciones.ParameterName = "@pObservaciones";
@@ -219,7 +235,9 @@ namespace CapaDatos
             return rpta;
 
         }
-        // Metodo ELIMINAR producto
+        // ==================================================
+        //  Permite eliminar un producto
+        // ==================================================
         public string Eliminar(int IdProducto)
         {
             string rpta = "";
