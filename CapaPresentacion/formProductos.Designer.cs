@@ -41,6 +41,7 @@
             this.lblTotalProductos = new System.Windows.Forms.Label();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbIncluyeBajas = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoProductos)).BeginInit();
@@ -50,7 +51,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(761, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(821, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(137, 133);
             this.pictureBox2.TabIndex = 4;
@@ -135,7 +136,7 @@
             this.dataListadoProductos.Name = "dataListadoProductos";
             this.dataListadoProductos.ReadOnly = true;
             this.dataListadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoProductos.Size = new System.Drawing.Size(864, 367);
+            this.dataListadoProductos.Size = new System.Drawing.Size(924, 367);
             this.dataListadoProductos.TabIndex = 0;
             this.dataListadoProductos.SelectionChanged += new System.EventHandler(this.dataListadoProductos_SelectionChanged);
             // 
@@ -152,7 +153,7 @@
             // 
             this.btnRefrescar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.BackgroundImage")));
             this.btnRefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefrescar.Location = new System.Drawing.Point(865, 148);
+            this.btnRefrescar.Location = new System.Drawing.Point(925, 148);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(33, 31);
             this.btnRefrescar.TabIndex = 13;
@@ -168,11 +169,22 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Busqueda por nombre de producto";
             // 
+            // cbIncluyeBajas
+            // 
+            this.cbIncluyeBajas.AutoSize = true;
+            this.cbIncluyeBajas.Location = new System.Drawing.Point(810, 149);
+            this.cbIncluyeBajas.Name = "cbIncluyeBajas";
+            this.cbIncluyeBajas.Size = new System.Drawing.Size(88, 17);
+            this.cbIncluyeBajas.TabIndex = 33;
+            this.cbIncluyeBajas.Text = "Incluye bajas";
+            this.cbIncluyeBajas.UseVisualStyleBackColor = true;
+            // 
             // formProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 564);
+            this.ClientSize = new System.Drawing.Size(970, 564);
+            this.Controls.Add(this.cbIncluyeBajas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.lblTotalProductos);
@@ -211,6 +223,7 @@
         private System.Windows.Forms.Label lblTotalProductos;
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cbIncluyeBajas;
     }
 }
 

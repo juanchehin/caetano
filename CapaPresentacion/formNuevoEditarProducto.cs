@@ -38,6 +38,9 @@ namespace CapaPresentacion
                 lblEditarNuevo.Text = "Nuevo";
                 this.cbEstadoProd.Visible = false;
                 this.lblEstado.Visible = false;
+
+                this.tbStock.Visible = false;
+                this.lblStock.Visible = false;
             }
             else
             {
@@ -47,6 +50,9 @@ namespace CapaPresentacion
             this.CargarProveedores();
             this.CargarCategorias();
         }
+        // ==============================================
+        //     Carga de proveedores y categorias
+        // =============================================
         public void CargarProveedores()
         {
             this.cbProveedores.DataSource = objetoProv.DameNombresProveedores();
@@ -55,13 +61,15 @@ namespace CapaPresentacion
         {
             this.cbCategorias.DataSource = objetoProd.DameNombresCategorias();
         }
-
+        // ==============================================
+        //     Boton GUARDAR
+        // =============================================
         private void btnGuardar_Click(object sender, EventArgs e)
         {
                 try
                 {
                     string rpta = "";
-                    if (this.tbProducto.Text == string.Empty || this.tbPrecio.Text == string.Empty || this.tbPrecio.Text == string.Empty )
+                    if (this.tbProducto.Text == string.Empty )
                     {
                         MensajeError("Falta ingresar algunos datos");
                     }
@@ -69,8 +77,8 @@ namespace CapaPresentacion
                     {
                         if (this.esNuevo)
                         {
-                            rpta = CN_Productos.Insertar(this.tbProducto.Text.Trim(), this.tbCodigo.Text.Trim(),Convert.ToDecimal(this.tbPrecio.Text),
-                                this.lbDescripcion.Text.Trim());
+                            rpta = CN_Productos.Insertar(this.tbProducto.Text.Trim(),this.cbCategorias.Text , this.cbProveedores.Text , this.tbCodigo.Text.Trim(),
+                                this.tbDescripcion.Text.Trim());
                         }
                         else
                         {
@@ -113,6 +121,11 @@ namespace CapaPresentacion
         private void MensajeError(string mensaje)
         {
             MessageBox.Show(mensaje, "Caetano", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

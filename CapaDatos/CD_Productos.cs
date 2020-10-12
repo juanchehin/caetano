@@ -69,12 +69,22 @@ namespace CapaDatos
         MySqlCommand comando = new MySqlCommand();
         List<string> categorias = new List<string>();
 
-        public DataTable Mostrar()
+        public DataTable Mostrar(bool incluyeBajas)
         {
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_dame_productos";
+
+            // Limpio el comando
+            comando.Parameters.Clear();
+
+            MySqlParameter pIncluyeBajas = new MySqlParameter();
+            pIncluyeBajas.ParameterName = "@pIncluyeBajas";
+            pIncluyeBajas.MySqlDbType = MySqlDbType.Int32;
+            // pIdProducto.Size = 60;
+            pIncluyeBajas.Value = incluyeBajas;
+            comando.Parameters.Add(pIncluyeBajas);
 
             tabla.Clear();
             leer = comando.ExecuteReader();
@@ -83,8 +93,9 @@ namespace CapaDatos
             return tabla;
 
         }
-
-        // Devuelve un solo producto dado un ID
+        // ==================================================
+        //  Devuelve un solo producto dado un ID
+        // ==================================================
         public DataTable MostrarProducto(int IdProducto)
         {
             Console.WriteLine("IdProducto en capa datos es : " + IdProducto);
@@ -147,7 +158,7 @@ namespace CapaDatos
         // ==================================================
         //  Permite insertar un producto
         // ==================================================
-        public string Insertar(CD_Productos Producto)
+        public string Insertar(CD_Productos Producto,string Categoria,string Proveedor)
         {
             string rpta = "";
             try
@@ -159,17 +170,19 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_producto";
 
-                MySqlParameter pIdProveedor = new MySqlParameter();
-                pIdProveedor.ParameterName = "@pIdProveedor";
-                pIdProveedor.MySqlDbType = MySqlDbType.Int32;
-                pIdProveedor.Value = Producto.IdProveedor;
-                comando.Parameters.Add(pIdProveedor);
+                MySqlParameter pProveedor = new MySqlParameter();
+                pProveedor.ParameterName = "@pProveedor";
+                pProveedor.MySqlDbType = MySqlDbType.VarChar;
+                pProveedor.Size = 60;
+                pProveedor.Value = Proveedor;
+                comando.Parameters.Add(pProveedor);
 
-                MySqlParameter pIdCategoria = new MySqlParameter();
-                pIdCategoria.ParameterName = "@pIdCategoria";
-                pIdCategoria.MySqlDbType = MySqlDbType.Int32;
-                pIdCategoria.Value = Producto.IdCategoria;
-                comando.Parameters.Add(pIdCategoria);
+                MySqlParameter pCategoria = new MySqlParameter();
+                pCategoria.ParameterName = "@pCategoria";
+                pCategoria.MySqlDbType = MySqlDbType.VarChar;
+                pCategoria.Size = 60;
+                pCategoria.Value = Categoria;
+                comando.Parameters.Add(pCategoria);
 
                 MySqlParameter pProducto = new MySqlParameter();
                 pProducto.ParameterName = "@pProducto";
@@ -191,14 +204,14 @@ namespace CapaDatos
                 pPrecio.Value = Producto.Precio;
                 comando.Parameters.Add(pPrecio);
 
-                MySqlParameter pStock = new MySqlParameter();
+                /*MySqlParameter pStock = new MySqlParameter();
                 pStock.ParameterName = "@pStock";
                 pStock.MySqlDbType = MySqlDbType.Int16;
                 pStock.Size = 40;
                 pStock.Value = Producto.Stock;
                 comando.Parameters.Add(pStock);
 
-                /*MySqlParameter pEstadoProd = new MySqlParameter();
+                MySqlParameter pEstadoProd = new MySqlParameter();
                 pEstadoProd.ParameterName = "@pEstadoProd";
                 pEstadoProd.MySqlDbType = MySqlDbType.VarChar;
                 pEstadoProd.Size = 1;

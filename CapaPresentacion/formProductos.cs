@@ -36,7 +36,7 @@ namespace CapaPresentacion
         public void MostrarProductos()
         {
             // Console.WriteLine("Ahora va el mostrar productos");
-            dataListadoProductos.DataSource = objetoCN.MostrarProd();
+            dataListadoProductos.DataSource = objetoCN.MostrarProd(this.cbIncluyeBajas.Checked);
             dataListadoProductos.Columns[0].Visible = false;
             lblTotalProductos.Text = "Total de Registros: " + Convert.ToString(dataListadoProductos.Rows.Count);
             // this.banderaFormularioHijo = false;

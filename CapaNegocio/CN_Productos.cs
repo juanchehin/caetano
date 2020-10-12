@@ -17,23 +17,22 @@ namespace CapaNegocio
 
         //Método Insertar que llama al método Insertar de la clase DProductos
         //de la CapaDatos
-        public static string Insertar(string Producto, string Codigo, decimal Precio, string Observaciones)
+        public static string Insertar(string Producto,string categoria,string proveedor, string Codigo,string Observaciones)
         {
             // Console.WriteLine("En insertar , nombre es " + nombre);
 
             CD_Productos Obj = new CD_Productos();
             Obj.Producto = Producto;
             Obj.Codigo = Codigo;
-            Obj.Precio = Precio;
             Obj.Observaciones = Observaciones;
 
-            return Obj.Insertar(Obj);
+            return Obj.Insertar(Obj,categoria,proveedor);
         }
 
-        public DataTable MostrarProd()
+        public DataTable MostrarProd(bool incluyeBajas)
         {
             DataTable tabla = new DataTable();
-            tabla = objetoCD.Mostrar();
+            tabla = objetoCD.Mostrar(incluyeBajas);
             return tabla;
         }
         /*
