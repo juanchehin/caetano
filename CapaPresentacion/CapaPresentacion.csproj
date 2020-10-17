@@ -130,17 +130,65 @@
     <Compile Include="formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="formNuevoEditarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarAlumno.Designer.cs">
+      <DependentUpon>formNuevoEditarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarCategoria.Designer.cs">
+      <DependentUpon>formNuevoEditarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="formNuevoEditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formNuevoEditarCliente.Designer.cs">
       <DependentUpon>formNuevoEditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="formNuevoEditarCorte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarCorte.Designer.cs">
+      <DependentUpon>formNuevoEditarCorte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarCurso.Designer.cs">
+      <DependentUpon>formNuevoEditarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarEgreso.Designer.cs">
+      <DependentUpon>formNuevoEditarEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarIngreso.Designer.cs">
+      <DependentUpon>formNuevoEditarIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="formNuevoEditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formNuevoEditarProducto.Designer.cs">
       <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarProveedor.Designer.cs">
+      <DependentUpon>formNuevoEditarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formNuevoEditarTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formNuevoEditarTurno.Designer.cs">
+      <DependentUpon>formNuevoEditarTurno.cs</DependentUpon>
     </Compile>
     <Compile Include="formProductos.cs">
       <SubType>Form</SubType>
@@ -192,11 +240,35 @@
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarAlumno.resx">
+      <DependentUpon>formNuevoEditarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarCategoria.resx">
+      <DependentUpon>formNuevoEditarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formNuevoEditarCliente.resx">
       <DependentUpon>formNuevoEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarCorte.resx">
+      <DependentUpon>formNuevoEditarCorte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarCurso.resx">
+      <DependentUpon>formNuevoEditarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarEgreso.resx">
+      <DependentUpon>formNuevoEditarEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarIngreso.resx">
+      <DependentUpon>formNuevoEditarIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formNuevoEditarProducto.resx">
       <DependentUpon>formNuevoEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarProveedor.resx">
+      <DependentUpon>formNuevoEditarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formNuevoEditarTurno.resx">
+      <DependentUpon>formNuevoEditarTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formProductos.resx">
       <DependentUpon>formProductos.cs</DependentUpon>
