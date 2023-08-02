@@ -21,9 +21,6 @@ namespace CapaNegocio
         public static string Insertar(string Apellidos, string Nombres, string DNI,string FechaNac, string Email, string Telefono
             , string Direccion, string Ciudad, string Provincia, string Sexo, string Observaciones)
         {
-            Console.WriteLine("En insertar , nombre es " + Nombres);
-            Console.WriteLine("En insertar , Sexo es " + Sexo);
-
             CD_Clientes Obj = new CD_Clientes();
             Obj.Apellidos = Apellidos;
             Obj.Nombres = Nombres;
@@ -69,8 +66,6 @@ namespace CapaNegocio
 
             DataTable tabla = new DataTable();
             tabla = objetoCD.MostrarCliente(IdCliente);
-            Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
-            Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
         // ==================================================

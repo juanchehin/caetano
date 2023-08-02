@@ -133,7 +133,6 @@ namespace CapaDatos
         // ==================================================
         public string Editar(CD_Clientes Cliente)
         {
-            Console.WriteLine("Cliente.IdCliente es 1 : " + Cliente.IdCliente);
             string rpta = "";
             comando.Parameters.Clear();// si no ponerlo al comienzo de esta funcion
             try
@@ -253,16 +252,12 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_cliente";
 
-                // Console.WriteLine("el cliente es : " + Cliente);
-
                 MySqlParameter pApellidos = new MySqlParameter();
                 pApellidos.ParameterName = "@pApellidos";
                 pApellidos.MySqlDbType = MySqlDbType.VarChar;
                 pApellidos.Size = 60;
                 pApellidos.Value = Cliente.Apellidos;
                 comando.Parameters.Add(pApellidos);
-
-                // Console.WriteLine("pNombre es : " + pNombre.Value);
 
                 MySqlParameter pNombres = new MySqlParameter();
                 pNombres.ParameterName = "@pNombres";
@@ -334,11 +329,9 @@ namespace CapaDatos
                 pComentarios.Value = Cliente.Comentarios;
                 comando.Parameters.Add(pComentarios);
 
-                Console.WriteLine("el comando es : " + comando.CommandText);
                 //Ejecutamos nuestro comando
 
                 rpta = comando.ExecuteScalar().ToString() == "Ok" ? "OK" : "NO se Ingreso el Registro";
-                Console.WriteLine("rpta es : " + rpta);
 
             }
             catch (Exception ex)
@@ -363,7 +356,6 @@ namespace CapaDatos
             // SqlConnection SqlCon = new SqlConnection();
             try
             {
-                Console.WriteLine("Cliente.IdCliente : " + Cliente.IdCliente);
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_eliminar_cliente";
@@ -413,8 +405,6 @@ namespace CapaDatos
 
                 leer = comando.ExecuteReader();
                 tabla.Load(leer);
-                Console.WriteLine("tabla en capa datos es : " + tabla);
-                Console.WriteLine("leer en capa datos es : " + leer.ToString());
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
 
@@ -422,9 +412,6 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entro en el catch y tabla es en capa datos" + tabla);
-                Console.WriteLine("Entro en el catch y ex es en capa datos" + ex.Message);
-
                 tabla = null;
             }
             return tabla;
